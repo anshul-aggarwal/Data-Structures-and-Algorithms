@@ -1,4 +1,5 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
 struct node{
@@ -38,6 +39,22 @@ void postorder(node* rt)
         cout<<rt->value;
 }
 
+int height(node* ptr)
+{
+    int ht=0;
+    if(ptr!=NULL)
+    {
+        int l_ht = height(ptr->left);
+        int r_ht = height(ptr->right);
+        int max_ht = max(l_ht, r_ht);
+        h = max_ht + 1;
+    }
+    return h;
+}
+
+
+
+
 void insert(int val)
 {
     node* newnode;
@@ -71,7 +88,5 @@ void insert(int val)
             newnode->parent = ptr;
         }
     }
-}
-            
-    
+    balance_avl();
 }
