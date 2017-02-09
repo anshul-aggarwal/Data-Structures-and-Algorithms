@@ -117,7 +117,7 @@ int main()
                     for(int i=0;i<n;i++)
                     {
                         int v;
-                        cout<<"Enter value to be inserted: ";
+                        cout<<"\nEnter value to be inserted: ";
                         cin>>v;
                         insert(v);
                     }
@@ -129,7 +129,7 @@ int main()
             case 4: postorder(root);
                     break;
             case 5: int v;
-                    cout<<"Enter value to be deleted: ";
+                    cout<<"\nEnter value to be deleted: ";
                     cin>>v;
                     deleteval(v);
                     break;
