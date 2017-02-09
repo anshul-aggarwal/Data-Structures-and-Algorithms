@@ -52,8 +52,18 @@ int height(node* ptr)
     return h;
 }
 
+int h_diff(node* ptr)
+{
+    int lh = height(ptr->left);
+    int rh = height(ptr->right);
+    bal_number = lh - rh;
+    return bal_number;
+}
 
+void balance()
+{
 
+}   
 
 void insert(int val)
 {
@@ -89,4 +99,44 @@ void insert(int val)
         }
     }
     balance_avl();
+}
+
+
+int main()
+{
+    int opt = 1;
+    while(opt!=6)
+    {
+        cout<<"\n\tAVL TREE\n1. Insert values\n2. Preorder Traversal\n3. Inorder Traversal\n4. Postorder Traversal\n5. Delete value\n6. Exit\nChoose option... ";
+        cin>>opt;
+        switch(opt)
+        {
+            case 1: int n;
+                    cout<<"\nEnter the number of values to be inserted: ";
+                    cin>>n;
+                    for(int i=0;i<n;i++)
+                    {
+                        int v;
+                        cout<<"Enter value to be inserted: ";
+                        cin>>v;
+                        insert(v);
+                    }
+                    break;
+            case 2: preorder(root);
+                    break;
+            case 3: inorder(root);
+                    break;
+            case 4: postorder(root);
+                    break;
+            case 5: int v;
+                    cout<<"Enter value to be deleted: ";
+                    cin>>v;
+                    deleteval(v);
+                    break;
+            case 6: break;
+            default: cout<<"\nInvalid choice!";
+                     break;
+        }
+    }
+    return 0;
 }
